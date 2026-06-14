@@ -19,6 +19,6 @@ class Dscleaner < Formula
     dir.mkpath
     (dir/".DS_Store").write "test"
     system bin/"dscleaner", "-y", testpath
-    refute_predicate dir/".DS_Store", :exist?
+    refute_path_exists dir/".DS_Store"
   end
 end
